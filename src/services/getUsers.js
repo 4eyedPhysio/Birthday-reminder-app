@@ -1,6 +1,6 @@
-import { User } from "../database/model/user.schema.js";
+const { User } = require("../database/model/user.schema.js");
 
-export const getAllUsers = async () => {
+const getAllUsers = async () => {
   try {
     const users = await User.find();
     return users;
@@ -8,3 +8,5 @@ export const getAllUsers = async () => {
     console.log(error);
   }
 };
+
+module.exports = { getAllUsers };

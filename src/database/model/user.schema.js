@@ -1,11 +1,11 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 // schema
 const userShema = mongoose.Schema(
   {
     dateOfBirth: {
       type: Date,
-      require: true,
+      required: true, // changed 'require' to 'required'
     },
     username: {
       type: String,
@@ -15,7 +15,7 @@ const userShema = mongoose.Schema(
       type: String,
       required: true,
       unique: true,
-      lowacase: true,
+      lowercase: true, // corrected 'lowacase' to 'lowercase'
     },
   },
   {
@@ -24,4 +24,6 @@ const userShema = mongoose.Schema(
 );
 
 // model
-export const User = mongoose.model("Users", userShema);
+const User = mongoose.model("Users", userShema);
+
+module.exports = { User };

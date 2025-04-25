@@ -1,4 +1,4 @@
-export const generateMiddleware = (schema) => {
+const generateMiddleware = (schema) => {
     return (req, res, next) => {
       if (schema) {
         const result = schema.validate(req.body);
@@ -13,3 +13,6 @@ export const generateMiddleware = (schema) => {
       next();
     };
   };
+  
+  module.exports = { generateMiddleware };
+  

@@ -1,9 +1,9 @@
-import { Router } from "express";
-import * as userController from "../controller/user.controller.js";
-import { userSchema } from "../validation/user.validation.js";
-import { generateMiddleware } from "../middleware/route.middleware.js";
+const express = require("express");
+const userController = require("../controller/user.controller.js");
+const { userSchema } = require("../validation/user.validation.js");
+const { generateMiddleware } = require("../middleware/route.middleware.js");
 
-const userRoute = Router();
+const userRoute = express.Router();
 
 userRoute.get("/all", userController.getAllUsers);
 userRoute.post(
@@ -12,4 +12,4 @@ userRoute.post(
   userController.createUser
 );
 
-export default userRoute;
+module.exports = userRoute;

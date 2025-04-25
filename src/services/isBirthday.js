@@ -8,4 +8,5 @@ const isTodayBirthday = (dateOfBirth) => {
     );
   };
   
-  export default isTodayBirthday;
+  module.exports = isTodayBirthday;
+  

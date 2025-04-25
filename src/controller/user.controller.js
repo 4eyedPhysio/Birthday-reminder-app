@@ -1,6 +1,6 @@
-import { User } from "../database/model/user.schema.js";
+const { User } = require("../database/model/user.schema.js");
 
-export const createUser = async (req, res) => {
+const createUser = async (req, res) => {
   const { dateOfBirth, username, email } = req.body;
   try {
     const newUser = new User({
@@ -19,7 +19,7 @@ export const createUser = async (req, res) => {
   }
 };
 
-export const getAllUsers = async (req, res) => {
+const getAllUsers = async (req, res) => {
   try {
     const users = await User.find();
     res.status(200).json(users);
@@ -27,3 +27,5 @@ export const getAllUsers = async (req, res) => {
     res.status(500).json(error.message);
   }
 };
+
+module.exports = { createUser, getAllUsers };

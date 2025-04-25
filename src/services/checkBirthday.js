@@ -1,5 +1,5 @@
-import sendBirthdayEmail from "./sendMail.js";
-import isTodayBirthday from "./isBirthday.js";
+const sendBirthdayEmail = require("./sendMail.js");
+const isTodayBirthday = require("./isBirthday.js");
 
 const checkBirthday = (users) => {
   users.forEach((user) => {
@@ -8,4 +8,5 @@ const checkBirthday = (users) => {
     }
   });
 };
-export default checkBirthday;
+
+module.exports = checkBirthday;
